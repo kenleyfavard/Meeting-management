@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+ <head>
+ <meta charset="UTF-8">
+	<title>Person List</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+ </head>
+<body>
+	<h1>Person List</h1>
+      <a href="addPerson">Add Person</a>
+      <br/><br/>
+      <div>
+         <table border="1" class="table table-bordered" >
+            <thead class="thead-dark">
+            <tr><h1></h1></tr>
+            <tr>
+               <th scope="col">identifiant medecin</th>
+               <th scope="col">nom medecin</th>
+               <th scope="col">prenom medecin</th>
+               <th scope="col">adresse medecin</th>
+               <th scope="col">telefone medecin</th>
+               <th scope="col">specialité</th>
+            </tr>
+            
+            <tr th:each ="person : ${medecins}" class="table-success">
+               <td th:text="${person.idMedecin}" >...</td>
+               <td th:text="${person.nomMedecin}" >...</td>
+               <td th:text="${person.prenomMedecin}" >...</td>
+               <td th:text="${person.adresseMedecin}" >...</td>
+               <td th:text="${person.telefoneMedecin}" >...</td>
+               <td th:text="${person.speciality}" >...</td>
+            </tr>
+         </table>
+      </div>
+</body>
+</html>
